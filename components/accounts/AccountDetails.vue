@@ -1,19 +1,23 @@
 <template>
   <div class="account-summary ss-panel">
     <h3>{{ accountData.name }}</h3>
-    <AccountHeaderInfo :value="value" :last-updated="lastUpdated"/>
-    <AccountValueUpdate :account-id="accountData.id"/>
-    <ApexChart :chart-data="chartFormatData"
-               :unique-id="accountData.id"
-               type="line"/>
+    <AccountHeaderInfo :value="value" :last-updated="lastUpdated" />
+    <AccountValueUpdate :account-id="accountData.id" />
+    <ApexChart
+      :chart-data="chartFormatData"
+      :unique-id="accountData.id"
+      type="line"
+    />
     <ul class="table-list">
       <li v-for="record in accountHistory" :key="record.id">
         <span>{{ record.value | sterling }}</span>
         <span>{{ record.date | dateTime }}</span>
         <span>
-          <InlineButton text="Delete record"
-                        classes="compact"
-                        @click.native="deleteRecord(record)"/>
+          <InlineButton
+            text="Delete record"
+            classes="compact"
+            @click.native="deleteRecord(record)"
+          />
         </span>
       </li>
     </ul>
@@ -26,6 +30,7 @@ import AccountValueUpdate from "./AccountValueUpdate";
 import AccountHeaderInfo from "~/components/accounts/AccountHeaderInfo";
 import ApexChart from "~/components/ApexChart";
 import moment from "moment";
+
 export default {
   components: {
     InlineButton,
@@ -81,8 +86,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../../assets/colors";
-@import "../../assets/mixins";
 h3 {
   margin: 0;
 }

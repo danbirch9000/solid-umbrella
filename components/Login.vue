@@ -24,9 +24,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../assets/colors";
-@import "../assets/mixins";
-
 .header-container {
   margin: 20px;
   text-align: right;

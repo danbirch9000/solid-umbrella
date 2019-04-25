@@ -6,9 +6,9 @@
         <vuetify-logo />
       </div>
       <v-card>
-        <v-card-title class="headline"
-          >Welcome to the Vuetify + Nuxt.js template</v-card-title
-        >
+        <v-card-title class="headline">
+          Welcome to the Vuetify + Nuxt.js template
+        </v-card-title>
         <v-card-text>
           <p>
             Vuetify is a progressive Material Design component framework for
@@ -50,7 +50,9 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer />
-          <v-btn color="primary" flat nuxt to="/inspire">Continue</v-btn>
+          <v-btn color="primary" flat nuxt to="/inspire">
+            Continue
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -58,13 +60,13 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import Logo from "~/components/Logo.vue";
+import VuetifyLogo from "~/components/VuetifyLogo.vue";
 
 export default {
   components: {
     Logo,
     VuetifyLogo
   }
-}
+};
 </script>

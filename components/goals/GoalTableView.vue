@@ -7,7 +7,11 @@
         <span>Year interest</span>
         <span>Total value</span>
       </li>
-      <li v-for="(record, index) in goalData" :key="index" class="table-list-body">
+      <li
+        v-for="(record, index) in goalData"
+        :key="index"
+        class="table-list-body"
+      >
         <span>{{ record.date }}</span>
         <span>{{ record.totalInterest | sterling }}</span>
         <span>{{ record.interest | sterling }}</span>
@@ -15,7 +19,6 @@
       </li>
     </ul>
   </div>
-
 </template>
 
 <script>
@@ -28,9 +31,7 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-@import "../../assets/colors";
-@import "../../assets/mixins";
+<style scoped>
 .table-list li {
   display: grid;
   grid-gap: 15px;
