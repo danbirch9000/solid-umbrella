@@ -1,28 +1,35 @@
 <template>
   <div>
-    <div v-if="accountsUsedForThisGoal.length">Accounts used for goal:
-      <Pill v-for="account in accountsUsedForThisGoal"
-            :key="account.id"
-            classes="blue">{{ account.name }} </Pill>
+    <div v-if="accountsUsedForThisGoal.length">
+      Accounts used for goal:
+      <Pill
+        v-for="account in accountsUsedForThisGoal"
+        :key="account.id"
+        classes="blue"
+      >
+        {{ account.name }}
+      </Pill>
     </div>
     <div>
-      <span class="link-text"
-            @click="editAccounts()">edit</span>
+      <span class="link-text" @click="editAccounts()">edit</span>
       <div v-if="showAllAccounts">
         <ul class="account-list">
-          <li v-for="account in accountData.data"
-              :key="account.id">
-            <input :id="account.id"
-                   v-model="formItems.accounts" 
-                   :value="account.id"
-                   type="checkbox"><label :for="account.id">{{ account.name }}</label></li>
+          <li v-for="account in accountData.data" :key="account.id">
+            <input
+              :id="account.id"
+              v-model="formItems.accounts"
+              :value="account.id"
+              type="checkbox"
+            /><label :for="account.id">{{ account.name }}</label>
+          </li>
         </ul>
-        <InlineButton :loading="loading"
-                      :use-confirmation="true"
-                      :action="() => updateAttachedAccounts()"
-                      text="Update"/>
+        <InlineButton
+          :loading="loading"
+          :use-confirmation="true"
+          :action="() => updateAttachedAccounts()"
+          text="Update"
+        />
       </div>
-
     </div>
   </div>
 </template>

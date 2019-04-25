@@ -1,12 +1,13 @@
 <template>
   <div>
-    <h1 class="page-header">Create new goal</h1>
+    <h1 class="page-header">
+      Create new goal
+    </h1>
 
     <section class="container">
       <NewGoal />
     </section>
   </div>
-
 </template>
 
 <script>

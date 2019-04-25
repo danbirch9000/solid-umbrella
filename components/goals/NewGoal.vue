@@ -1,87 +1,109 @@
 <template>
   <div class="ss-panel">
     <div v-if="hasErrors" class="error-summary">
-      <div v-if="allowSave" class="error-message">{{ errors.first('description') }}</div>
-      <div class="error-message">{{ errors.first('amount') }}</div>
-      <div class="error-message">{{ errors.first('rate') }}</div>
-      <div class="error-message">{{ errors.first('years') }}</div>
-      <div class="error-message">{{ errors.first('monthly') }}</div>
+      <div v-if="allowSave" class="error-message">
+        {{ errors.first("description") }}
+      </div>
+      <div class="error-message">
+        {{ errors.first("amount") }}
+      </div>
+      <div class="error-message">
+        {{ errors.first("rate") }}
+      </div>
+      <div class="error-message">
+        {{ errors.first("years") }}
+      </div>
+      <div class="error-message">
+        {{ errors.first("monthly") }}
+      </div>
     </div>
-    <div :class="{'no-title': !allowSave}" class="goal-create-form">
-
+    <div :class="{ 'no-title': !allowSave }" class="goal-create-form">
       <div v-if="allowSave" class="standard-input">
         <label for="description">Goal title</label>
-        <input v-validate="'required'"
-               id="description"
-               v-model="formItems.description"
-               name="description"
-               type="text"
-               @keyup.enter="calculateGoal()">
+        <input
+          id="description"
+          v-model="formItems.description"
+          v-validate="'required'"
+          name="description"
+          type="text"
+          @keyup.enter="calculateGoal()"
+        />
       </div>
 
       <div class="standard-input">
         <label for="amount">Initial amount</label>
-        <input v-validate="'required|numeric'"
-               id="amount"
-               v-model="formItems.amount"
-               name="amount"
-               type="number"
-               @keyup.enter="calculateGoal()">
+        <input
+          id="amount"
+          v-model="formItems.amount"
+          v-validate="'required|numeric'"
+          name="amount"
+          type="number"
+          @keyup.enter="calculateGoal()"
+        />
       </div>
 
       <div class="standard-input">
         <label for="rate">Rate (%)</label>
-        <input v-validate="'required|numeric'"
-               id="rate"
-               v-model="formItems.rate"
-               name="rate"
-               maxlength="2"
-               type="number"
-               @keyup.enter="calculateGoal()">
+        <input
+          id="rate"
+          v-model="formItems.rate"
+          v-validate="'required|numeric'"
+          name="rate"
+          maxlength="2"
+          type="number"
+          @keyup.enter="calculateGoal()"
+        />
       </div>
 
       <div class="standard-input">
         <label for="years">Years</label>
-        <input v-validate="'required|numeric'"
-               id="years"
-               v-model="formItems.years"
-               name="years"
-               maxlength="2"
-               type="number"
-               @keyup.enter="calculateGoal()">
+        <input
+          id="years"
+          v-model="formItems.years"
+          v-validate="'required|numeric'"
+          name="years"
+          maxlength="2"
+          type="number"
+          @keyup.enter="calculateGoal()"
+        />
       </div>
 
       <div class="standard-input">
         <label for="monthly">Monthly contributions</label>
-        <input v-validate="'required|numeric'"
-               id="monthly"
-               v-model="formItems.monthly"
-               name="monthly"
-               type="number"
-               @keyup.enter="calculateGoal()">
+        <input
+          id="monthly"
+          v-model="formItems.monthly"
+          v-validate="'required|numeric'"
+          name="monthly"
+          type="number"
+          @keyup.enter="calculateGoal()"
+        />
       </div>
-      <InlineButton :valid="true"
-                    :action="() => calculateGoal()"
-                    text="Calculate"/>
+      <InlineButton
+        :valid="true"
+        :action="() => calculateGoal()"
+        text="Calculate"
+      />
     </div>
 
     <div class="results">
-      <GoalTableView :goal-data="goal"/>
-      <ApexChart v-if="chartFormatData.length"
-                 :chart-data="chartSeriesData"
-                 unique-id="chart-calc"
-                 type="line"/>
+      <GoalTableView :goal-data="goal" />
+      <ApexChart
+        v-if="chartFormatData.length"
+        :chart-data="chartSeriesData"
+        unique-id="chart-calc"
+        type="line"
+      />
     </div>
 
-
-    <InlineButton v-if="goal.length && allowSave"
-                  :valid="true"
-                  :use-confirmation="true"
-                  :action="() => saveGoal()"
-                  text="Save this goal"/>
-
+    <InlineButton
+      v-if="goal.length && allowSave"
+      :valid="true"
+      :use-confirmation="true"
+      :action="() => saveGoal()"
+      text="Save this goal"
+    />
   </div>
-
 </template>
 
 <script>

@@ -2,21 +2,18 @@
   <div class="account-summary--create ss-panel">
     <div class="standard-input">
       <label for="accountName">Name</label>
-      <input id="accountName"
-             v-model="formItems.accountName"
-             type="text">
+      <input id="accountName" v-model="formItems.accountName" type="text" />
     </div>
     <div class="standard-input">
       <label for="accountValue">Value</label>
-      <input id="accountValue"
-             v-model="formItems.accountValue"
-             type="number">
+      <input id="accountValue" v-model="formItems.accountValue" type="number" />
     </div>
 
-
-    <InlineButton :loading="loading"
-                  :action="() => createAccount()"
-                  text="Create"/>
+    <InlineButton
+      :loading="loading"
+      :action="() => createAccount()"
+      text="Create"
+    />
   </div>
 </template>
 

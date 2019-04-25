@@ -47,6 +47,7 @@ export default {
         });
         return filteredData;
       }
+      return null;
     }
   },
   watch: {
@@ -85,5 +86,4 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

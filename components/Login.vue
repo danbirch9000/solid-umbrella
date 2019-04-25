@@ -1,7 +1,6 @@
 <template>
   <section class="header-container">
-    <InlineButton :action="() => login()"
-                  text="Login / Register"/>
+    <InlineButton :action="() => login()" text="Login / Register" />
   </section>
 </template>
 

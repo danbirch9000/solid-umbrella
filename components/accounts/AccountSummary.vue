@@ -1,13 +1,17 @@
 <template>
   <div class="account-summary ss-panel">
-    <h3 class="link-text" @click="loadDetail(accountData.id)">{{ accountData.name }}</h3>
-    <AccountHeaderInfo :value="value" :last-updated="lastUpdated"/>
-    <AccountValueUpdate :account-id="accountData.id"/>
-    <ApexChart v-if="accountData.history.length > 1"
-               :chart-data="chartFormatData"
-               :unique-id="accountData.id"
-               type="spark"/>
-    <AccountDelete :account-id="accountData.id"/>
+    <h3 class="link-text" @click="loadDetail(accountData.id)">
+      {{ accountData.name }}
+    </h3>
+    <AccountHeaderInfo :value="value" :last-updated="lastUpdated" />
+    <AccountValueUpdate :account-id="accountData.id" />
+    <ApexChart
+      v-if="accountData.history.length > 1"
+      :chart-data="chartFormatData"
+      :unique-id="accountData.id"
+      type="spark"
+    />
+    <AccountDelete :account-id="accountData.id" />
   </div>
 </template>
 

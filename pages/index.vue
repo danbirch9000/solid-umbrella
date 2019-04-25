@@ -1,14 +1,18 @@
 <template>
   <section>
     <Login />
-    <h1 class="page-header">Quick savings calculator</h1>
+    <h1 class="page-header">
+      Quick savings calculator
+    </h1>
     <section class="container">
-      <p>Use our savings calculator to see how compound interest can boost your savings over time.</p>
-      <NewGoal :allow-save="false"/>
+      <p>
+        Use our savings calculator to see how compound interest can boost your
+        savings over time.
+      </p>
+      <NewGoal :allow-save="false" />
     </section>
   </section>
 </template>
-
 
 <script>
 import Login from "~/components/Login";

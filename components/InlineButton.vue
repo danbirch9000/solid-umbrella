@@ -3,7 +3,7 @@
     <span :class="classes" class="ss-btn-inline" @click="confirm()">
       <span v-if="!confirmation">{{ text }}</span>
       <span v-else>Are you sure?</span>
-      <InlineLoader v-if="loading"/>
+      <InlineLoader v-if="loading" />
     </span>
   </div>
 </template>
@@ -71,5 +71,4 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

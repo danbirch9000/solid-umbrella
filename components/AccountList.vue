@@ -2,7 +2,10 @@
   <section>
     <div v-if="accounts">
       <select v-model="selectedAcccount">
-        <option v-for="(item) in accounts" :value="item.id" :key="item.id">{{ item.name }}</option>
+        <option v-for="item in accounts" :key="item.id" :value="item.id">
+          {{
+          >{{ item.name }}
+        </option>
       </select>
     </div>
   </section>

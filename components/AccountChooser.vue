@@ -1,14 +1,22 @@
 <template>
   <section>
     <div v-if="accounts.length > 0">
-      <div v-for="(item) in accounts" :key="item.description" class="form-check">
+      <div v-for="item in accounts" :key="item.description" class="form-check">
         <label :for="item.id" class="form-check-label">
-          <input :id="item.id" :value="item.id" v-model="selectedAccounts" class="form-check-input" type="checkbox">
+          <input
+            :id="item.id"
+            v-model="selectedAccounts"
+            :value="item.id"
+            class="form-check-input"
+            type="checkbox"
+          >
           {{ item.name }}
           <span class="form-check-sign"><span class="check" /></span>
         </label>
       </div>
-      <button class="btn btn-primary btn-sm" @click="linkAccounts()">Save</button>
+      <button class="btn btn-primary btn-sm" @click="linkAccounts()">
+        Save
+      </button>
     </div>
   </section>
 </template>

@@ -1,24 +1,26 @@
 <template>
   <section class="container">
-    <GoalSummary v-if="goal"
-                 :key="goal.id"
-                 :goal-data="goal"
-                 :account-data="userAccounts" />
+    <GoalSummary
+      v-if="goal"
+      :key="goal.id"
+      :goal-data="goal"
+      :account-data="userAccounts"
+    />
 
-    <InlineButton :use-confirmation="true"
-                  :action="() => deleteGoal(goal.id)"
-                  text="Delete this goal"/>
+    <InlineButton
+      :use-confirmation="true"
+      :action="() => deleteGoal(goal.id)"
+      text="Delete this goal"
+    />
     <div class="ss-panel">
-      <GoalTableView v-if="goalBreakdown" :goal-data="goalBreakdown"/>
+      <GoalTableView v-if="goalBreakdown" :goal-data="goalBreakdown" />
     </div>
-
   </section>
 </template>
 
 <script>
 import pageMixin from "~/mixins/pageMixin";
 import { mapState } from "vuex";
-import GoalDetails from "~/components/goals/GoalDetails";
 import GoalSummary from "~/components/goals/GoalSummary";
 import InlineButton from "~/components/InlineButton";
 import GoalTableView from "~/components/goals/GoalTableView";
@@ -26,7 +28,7 @@ import { getFinanceData } from "~/common/utilities.js";
 
 export default {
   middleware: ["check-auth", "auth"],
-  components: { GoalDetails, GoalSummary, InlineButton, GoalTableView },
+  components: { GoalSummary, InlineButton, GoalTableView },
   mixins: [pageMixin],
   computed: {
     ...mapState({
@@ -69,5 +71,4 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

@@ -2,7 +2,13 @@
   <section>
     <div v-if="getGoalsFromStore.length > 0">
       <select v-model="selected">
-        <option v-for="(item, index) in getGoalsFromStore" :value="index" :key="index">{{ item.description }}</option>
+        <option
+          v-for="(item, index) in getGoalsFromStore"
+          :key="index"
+          :value="index"
+        >
+          {{ item.description }}
+        </option>
       </select>
     </div>
   </section>

@@ -1,38 +1,78 @@
 <template>
   <section>
-    <Message v-if="!formValid && userClickedSaved" type="error">Please complete all fields</Message>
+    <Message v-if="!formValid && userClickedSaved" type="error">
+      Please complete all fields
+    </Message>
     <form>
       <div class="form-elements">
         <div v-if="canSave" class="form-group">
           <label for="goal-description">Goal description</label>
-          <input id="goal-description" v-model="description" type="text" class="form-control" aria-describedby="goalDescription" placeholder="e.g. Pension fund">
+          <input
+            id="goal-description"
+            v-model="description"
+            type="text"
+            class="form-control"
+            aria-describedby="goalDescription"
+            placeholder="e.g. Pension fund"
+          >
         </div>
         <div class="form-group">
           <label for="interest-rate">Interest rate</label>
-          <input id="interest-rate" v-model="rate" type="text" class="form-control" aria-describedby="interestRate">
+          <input
+            id="interest-rate"
+            v-model="rate"
+            type="text"
+            class="form-control"
+            aria-describedby="interestRate"
+          >
         </div>
         <div class="form-group">
           <label for="inital-amount">Initial amount</label>
-          <input id="inital-amount" v-model="amount" type="text" class="form-control" aria-describedby="initialAmount">
+          <input
+            id="inital-amount"
+            v-model="amount"
+            type="text"
+            class="form-control"
+            aria-describedby="initialAmount"
+          >
         </div>
         <div class="form-group">
           <label for="monthly-deposits">Monthly deposits</label>
-          <input id="monthly-deposits" v-model="monthly" type="text" class="form-control" aria-describedby="monthlyDeposits">
+          <input
+            id="monthly-deposits"
+            v-model="monthly"
+            type="text"
+            class="form-control"
+            aria-describedby="monthlyDeposits"
+          >
         </div>
         <div class="form-group">
           <label for="years">Years</label>
-          <input id="years" v-model="years" type="text" class="form-control" aria-describedby="years">
+          <input
+            id="years"
+            v-model="years"
+            type="text"
+            class="form-control"
+            aria-describedby="years"
+          >
         </div>
       </div>
       <div class="form-actions">
-        <button type="button" class="btn btn-primary" @click="calculate()">Calculate</button>
-        <button v-if="canSave" type="button" class="btn btn-primary" @click="saveGoal()">Save goal</button>
+        <button type="button" class="btn btn-primary" @click="calculate()">
+          Calculate
+        </button>
+        <button
+          v-if="canSave"
+          type="button"
+          class="btn btn-primary"
+          @click="saveGoal()"
+        >
+          Save goal
+        </button>
       </div>
-
     </form>
     <TableData v-if="currentViewChartData" />
     <Chart v-if="currentViewChartData" />
-
   </section>
 </template>
 

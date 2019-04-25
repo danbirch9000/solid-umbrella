@@ -1,19 +1,30 @@
 <template>
   <div class="goal-summary ss-panel">
-    <h3 class="link-text" @click="loadDetail(goalData.id)">{{ goalData.description }}</h3>
-    <GoalHeaderInfo :goal-data="goalData" :goal-target="goalTarget" :current-value="currentValuation"/>
+    <h3 class="link-text" @click="loadDetail(goalData.id)">
+      {{ goalData.description }}
+    </h3>
+    <GoalHeaderInfo
+      :goal-data="goalData"
+      :goal-target="goalTarget"
+      :current-value="currentValuation"
+    />
 
-    <Pill classes="grey click" @click.native="updateChart('')">All</Pill>
-    <Pill classes="grey click" @click.native="updateChart('toDate')">To date</Pill>
+    <Pill classes="grey click" @click.native="updateChart('')">
+      All
+    </Pill>
+    <Pill classes="grey click" @click.native="updateChart('toDate')">
+      To date
+    </Pill>
 
-    <ApexChart v-if="chartFormatData.length"
-               :chart-data="chartSeriesData"
-               :unique-id="goalData.id"
-               :filter="chartFilter"
-               type="line"/>
+    <ApexChart
+      v-if="chartFormatData.length"
+      :chart-data="chartSeriesData"
+      :unique-id="goalData.id"
+      :filter="chartFilter"
+      type="line"
+    />
 
-    <AccountsOnAGoal :account-data="accountData" :goal-data="goalData"/>
-
+    <AccountsOnAGoal :account-data="accountData" :goal-data="goalData" />
   </div>
 </template>
 

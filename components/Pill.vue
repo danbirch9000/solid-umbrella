@@ -1,6 +1,6 @@
 <template>
   <span :class="classes" class="pill">
-    <slot/>
+    <slot />
   </span>
 </template>
 

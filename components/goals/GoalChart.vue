@@ -1,13 +1,19 @@
 <template>
   <section>
-    <Pill classes="grey click" @click.native="updateChart('')">All</Pill>
-    <Pill classes="grey click" @click.native="updateChart('toDate')">To date</Pill>
+    <Pill classes="grey click" @click.native="updateChart('')">
+      All
+    </Pill>
+    <Pill classes="grey click" @click.native="updateChart('toDate')">
+      To date
+    </Pill>
 
-    <ApexChart v-if="chartFormatData.length"
-               :chart-data="chartSeriesData"
-               :unique-id="uniqueId"
-               :filter="chartFilter"
-               type="line"/>
+    <ApexChart
+      v-if="chartFormatData.length"
+      :chart-data="chartSeriesData"
+      :unique-id="uniqueId"
+      :filter="chartFilter"
+      type="line"
+    />
   </section>
 </template>
 
@@ -65,5 +71,4 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

@@ -5,8 +5,15 @@
       <div v-for="(goal, index) in goals" :key="index" class="card">
         <ul>
           <li>{{ goal.description }}</li>
-          <li>Save {{ goal.monthly | currency }} per month for {{ goal.years | year }} years starting {{ goal.startDate | monthAndYear }}</li>
-          <li>{{ getGoalSummary(goal).value | currency }} by {{ getGoalSummary(goal).date }}</li>
+          <li>
+            Save {{ goal.monthly | currency }} per month for
+            {{ goal.years | year }} years starting
+            {{ goal.startDate | monthAndYear }}
+          </li>
+          <li>
+            {{ getGoalSummary(goal).value | currency }} by
+            {{ getGoalSummary(goal).date }}
+          </li>
         </ul>
       </div>
     </div>

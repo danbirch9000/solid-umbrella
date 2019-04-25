@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div v-if="goalTarget" class="goal-target"><span>{{ goalTarget.value | currency }}</span>  by {{ goalTarget.date }}</div>
+    <div v-if="goalTarget" class="goal-target">
+      <span>{{ goalTarget.value | currency }}</span> by {{ goalTarget.date }}
+    </div>
     <div class="goal-definition">
       {{ goal }}
     </div>

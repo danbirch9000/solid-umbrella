@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="ss-value">{{ value | sterling }}</div>
+    <div class="ss-value">
+      {{ value | sterling }}
+    </div>
     <div class="date">Last updated: {{ lastUpdatedDesc }}</div>
   </div>
 </template>

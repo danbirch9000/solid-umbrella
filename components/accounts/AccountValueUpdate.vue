@@ -2,16 +2,20 @@
   <div class="account-summary--quick-update">
     <div class="standard-input">
       <label :for="`update-${accountId}`">New value</label>
-      <input v-model="formItems.quickUpdate"
-             :id="`update-${accountId}`"
-             type="number">
+      <input
+        :id="`update-${accountId}`"
+        v-model="formItems.quickUpdate"
+        type="number"
+      />
     </div>
 
-    <InlineButton :loading="loading"
-                  :use-confirmation="true"
-                  :valid="isFormValid"
-                  :action="() => updateAccountValue()"
-                  text="Update"/>
+    <InlineButton
+      :loading="loading"
+      :use-confirmation="true"
+      :valid="isFormValid"
+      :action="() => updateAccountValue()"
+      text="Update"
+    />
   </div>
 </template>
 

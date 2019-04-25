@@ -1,17 +1,21 @@
 <template>
   <div>
-    <h1 class="page-header">Your goals</h1>
+    <h1 class="page-header">
+      Your goals
+    </h1>
     <section class="container">
-      <InlineButton :action="() => createNew()"
-                    text="New goal"/>
+      <InlineButton :action="() => createNew()" text="New goal" />
       <div v-if="userGoals.data && userGoals.data.length" class="goals-grid">
-        <template v-for="goal in userGoals.data" >
-          <GoalSummary :key="goal.id" :goal-data="goal" :account-data="userAccounts" />
+        <template v-for="goal in userGoals.data">
+          <GoalSummary
+            :key="goal.id"
+            :goal-data="goal"
+            :account-data="userAccounts"
+          />
         </template>
       </div>
     </section>
   </div>
-
 </template>
 
 <script>
