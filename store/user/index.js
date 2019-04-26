@@ -67,8 +67,8 @@ export default {
         return;
       }
 
-      let userInfo = tokens.token.split(".");
-      let userDetails = JSON.parse(atob(userInfo[1]));
+      const userInfo = tokens.token.split(".");
+      const userDetails = JSON.parse(atob(userInfo[1]));
       vuexContext.commit("SET_USER_ID", userDetails.user_id);
       vuexContext.commit("SET_FIREBASE_TOKEN", tokens.token);
       vuexContext.commit("SET_TOKENS", tokens.token);

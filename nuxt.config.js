@@ -14,12 +14,13 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: pkg.description }
     ],
+    script: [{ src: "https://www.gstatic.com/firebasejs/5.4.1/firebase.js" }],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
+          "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Open+Sans:400,700|Material+Icons"
       }
     ]
   },
@@ -32,14 +33,20 @@ export default {
   /*
    ** Global CSS
    */
-  css: ["~/assets/style/app.styl"],
+  css: ["~/assets/style/app.styl", "@/assets/styles.scss"],
 
+  env: {
+    isDev: process.env.NODE_ENV !== "production"
+  },
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
     "@/plugins/vuetify",
-    { src: "~/plugins/vee-validate.js", ssr: true }
+    { src: "~/plugins/vee-validate.js", ssr: true },
+    "~/plugins/filters",
+    "~/plugins/firebase",
+    "~/plugins/money.filter"
   ],
 
   /*

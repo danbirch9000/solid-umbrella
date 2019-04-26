@@ -53,7 +53,7 @@ export default {
       });
     },
     getGoalSummary(item) {
-      let target = utilities.getFinancialData(item);
+      const target = utilities.getFinancialData(item);
       return target[target.length - 1];
     }
   }

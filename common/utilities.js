@@ -61,7 +61,7 @@ const getCiforYear = (amount, year, monthly, rate, time) => {
   const finance = new Finance();
   let principal = amount + monthly;
   let value = 0;
-  for (var index = 0; index < 12; index++) {
+  for (let index = 0; index < 12; index++) {
     value = finance.CI(rate / 12, 1, principal, 1);
     principal = value + monthly;
   }
@@ -78,14 +78,14 @@ const getCiforYear = (amount, year, monthly, rate, time) => {
 };
 
 export const getCiForMonths = (amount, months, monthly, rate) => {
-  var finance = new Finance();
-  var principal = amount + monthly;
-  var value = 0;
-  for (var index = 0; index < months; index++) {
+  let finance = new Finance();
+  let principal = amount + monthly;
+  let value = 0;
+  for (let index = 0; index < months; index++) {
     value = finance.CI(rate / 12, 1, principal, 1);
     principal = value + monthly;
   }
-  var interest = value - (amount + monthly * months);
+  let interest = value - (amount + monthly * months);
 
   return {
     value: value,
@@ -100,8 +100,8 @@ const roundToTwo = num => {
 };
 
 export const buildChartData = data => {
-  var chartData = [];
-  for (var i = 0; i < data.length; i++) {
+  let chartData = [];
+  for (let i = 0; i < data.length; i++) {
     chartData.push([data[i].utc, data[i].value]);
   }
   return chartData;

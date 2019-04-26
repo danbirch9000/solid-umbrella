@@ -1,26 +1,28 @@
 <template>
-  <div :class="{ 'menu-active': menuState }" class="body-container">
-    <nav>
-      <a class="navbar-brand" @click.prevent="navigateHome()">
-        <img src="/assets/images/saveswiftlogo.png" />
-      </a>
-      <a v-if="isLoggedIn()" class="burger-menu" @click="toggleMenu()" />
-      <div v-if="isLoggedIn()" :class="{ active: menuState }" class="menu">
-        <ul>
-          <nuxt-link to="/goals" tag="li" active-class="active">
-            <a>Goals</a>
-          </nuxt-link>
-          <nuxt-link to="/accounts" tag="li" active-class="active">
-            <a>Accounts</a>
-          </nuxt-link>
-          <li active-class="active" @click="logout">
-            <a>Logout</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <nuxt />
-  </div>
+  <v-app>
+    <div :class="{ 'menu-active': menuState }" class="body-container">
+      <nav>
+        <a class="navbar-brand" @click.prevent="navigateHome()">
+          <img src="/assets/images/saveswiftlogo.png" />
+        </a>
+        <a v-if="isLoggedIn()" class="burger-menu" @click="toggleMenu()" />
+        <div v-if="isLoggedIn()" :class="{ active: menuState }" class="menu">
+          <ul>
+            <nuxt-link to="/goals" tag="li" active-class="active">
+              <a>Goals</a>
+            </nuxt-link>
+            <nuxt-link to="/accounts" tag="li" active-class="active">
+              <a>Accounts</a>
+            </nuxt-link>
+            <li active-class="active" @click="logout">
+              <a>Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <nuxt />
+    </div>
+  </v-app>
 </template>
 
 <script>

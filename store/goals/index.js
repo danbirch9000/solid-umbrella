@@ -85,8 +85,8 @@ export default {
   mutations: {
     SET_USER_GOALS: (state, payload) => {
       if (payload.data) {
-        let goal = { ...payload.data };
-        let userGoals = [];
+        const goal = { ...payload.data };
+        const userGoals = [];
         Object.keys(goal).forEach(key => {
           userGoals.push({
             ...goal[key],
@@ -103,7 +103,7 @@ export default {
     },
     SET_CREATE_GOAL: (state, payload) => {
       if (payload.data) {
-        let tempState =
+        const tempState =
           state.userGoals.data !== null ? [...state.userGoals.data] : [];
         tempState.push({ ...payload.payload, id: payload.data.name });
         state.userGoals.data = tempState;

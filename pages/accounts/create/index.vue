@@ -21,10 +21,10 @@
               <input
                 id="amount"
                 v-model="amount"
-                type="text"
-                class="form-control"
                 aria-describedby="amount"
+                class="form-control"
                 placeholder="e.g. £2000"
+                type="text"
               />
             </div>
             <button class="btn btn-primary" @click.prevent="createAccount()">

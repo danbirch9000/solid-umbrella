@@ -16,11 +16,11 @@
 </template>
 
 <script>
+import moment from "moment";
 import AccountValueUpdate from "./AccountValueUpdate";
 import AccountDelete from "~/components/accounts/AccountDelete";
 import AccountHeaderInfo from "~/components/accounts/AccountHeaderInfo";
 import ApexChart from "~/components/ApexChart";
-import moment from "moment";
 export default {
   components: {
     AccountValueUpdate,

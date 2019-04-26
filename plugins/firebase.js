@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
 import { MAIN_CONFIG } from "~/common/env-config";
 
 const config = process.env.isDev

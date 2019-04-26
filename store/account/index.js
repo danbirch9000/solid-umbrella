@@ -145,10 +145,10 @@ export default {
     // },
     SET_USER_ACCOUNTS(state, payload) {
       if (payload.data) {
-        let account = { ...payload.data };
-        let userAccounts = [];
+        const account = { ...payload.data };
+        const userAccounts = [];
         Object.keys(account).forEach(key => {
-          let history = [];
+          const history = [];
           if (account[key].history) {
             Object.keys(account[key].history).forEach(hKey => {
               history.push({

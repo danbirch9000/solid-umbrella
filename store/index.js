@@ -1,10 +1,10 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import * as svgicon from "vue-svgicon";
 import userModule from "./user";
 import goalModule from "./goals";
 import accountModule from "./account";
 import appModule from "./app";
-import * as svgicon from "vue-svgicon";
 Vue.use(Vuex);
 Vue.use(svgicon);
 const store = () => {
