@@ -11,7 +11,7 @@
       :unique-id="accountData.id"
       type="spark"
     />
-    <AccountDelete :account-id="accountData.id" />
+    <AccountDelete v-if="deleteAcc" :account-id="accountData.id" />
   </div>
 </template>
 
@@ -32,6 +32,10 @@ export default {
     accountData: {
       type: Object,
       required: true
+    },
+    deleteAcc: {
+      type: Boolean,
+      default: true
     }
   },
   computed: {

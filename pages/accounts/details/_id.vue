@@ -8,7 +8,9 @@
 import pageMixin from "~/mixins/pageMixin";
 import { mapState } from "vuex";
 import AccountDetails from "~/components/accounts/AccountDetails";
+
 export default {
+  layout: "application",
   middleware: ["check-auth", "auth"],
   components: { AccountDetails },
   mixins: [pageMixin],

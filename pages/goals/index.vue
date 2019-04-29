@@ -25,6 +25,7 @@ import GoalSummary from "~/components/goals/GoalSummary";
 import InlineButton from "~/components/InlineButton";
 
 export default {
+  layout: "application",
   components: { GoalSummary, InlineButton },
   mixins: [pageMixin],
   middleware: ["check-auth", "auth"], // check-auth calls INIT_AUTH to make sure the user is authenticated

@@ -1,32 +1,43 @@
 <template>
-  <div class="account-summary--create ss-panel">
-    <div class="standard-input">
-      <label for="accountName">Name</label>
-      <input id="accountName" v-model="formItems.accountName" type="text" />
-    </div>
-    <div class="standard-input">
-      <label for="accountValue">Value</label>
-      <input id="accountValue" v-model="formItems.accountValue" type="number" />
-    </div>
-
-    <InlineButton
-      :loading="loading"
-      :action="() => createAccount()"
-      text="Create"
-    />
-  </div>
+  <v-dialog v-model="dialog" persistent max-width="600px">
+    <template v-slot:activator="{ on }">
+      <v-btn fab absolute right color="primary" v-on="on">
+        <v-icon dark>add</v-icon>
+      </v-btn>
+    </template>
+    <v-card>
+      <v-card-title>
+        <span class="headline">Create new account</span>
+      </v-card-title>
+      <v-card-text>
+        <div class="standard-input">
+          <label for="accountName">Name</label>
+          <input id="accountName" v-model="formItems.accountName" type="text" />
+        </div>
+        <div class="standard-input">
+          <label for="accountValue">Value</label>
+          <input
+            id="accountValue"
+            v-model="formItems.accountValue"
+            type="number"
+          />
+        </div>
+      </v-card-text>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn color="error" @click="dialog = false">Close</v-btn>
+        <v-btn color="primary" @click="createAccount()">Save</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script>
-import InlineButton from "~/components/InlineButton.vue";
 import { mapState } from "vuex";
 import moment from "moment";
 import AccountValueUpdate from "~/mixins/AccountValueUpdate";
 
 export default {
-  components: {
-    InlineButton
-  },
   mixins: [AccountValueUpdate],
   data() {
     return {
@@ -34,6 +45,7 @@ export default {
         accountName: "",
         accountValue: ""
       },
+      dialog: false,
       loading: false
     };
   },
@@ -63,6 +75,7 @@ export default {
               date: moment().format()
             };
             this.updateAccount(payload);
+            this.dialog = false;
           });
       }
     }

@@ -27,6 +27,7 @@ import GoalTableView from "~/components/goals/GoalTableView";
 import { getFinanceData } from "~/common/utilities.js";
 
 export default {
+  layout: "application",
   middleware: ["check-auth", "auth"],
   components: { GoalSummary, InlineButton, GoalTableView },
   mixins: [pageMixin],

@@ -15,6 +15,7 @@ import pageMixin from "~/mixins/pageMixin";
 import NewGoal from "~/components/goals/NewGoal";
 
 export default {
+  layout: "application",
   components: { NewGoal },
   mixins: [pageMixin],
   middleware: ["check-auth", "auth"] // check-auth calls INIT_AUTH to make sure the user is authenticated

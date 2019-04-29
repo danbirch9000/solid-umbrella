@@ -1,19 +1,21 @@
 <template>
   <div>
-    <h1 class="page-header">
-      Your accounts
-    </h1>
-    <section class="container">
+    <h1 class="page-header">Your accounts</h1>
+    <div>
       <AccountCreate />
       <div
         v-if="userAccounts.data && userAccounts.data.length"
         class="account-grid"
       >
         <template v-for="account in userAccounts.data">
-          <AccountSummary :key="account.id" :account-data="account" />
+          <AccountSummary
+            :key="account.id"
+            :account-data="account"
+            :delete-acc="false"
+          />
         </template>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
@@ -23,6 +25,7 @@ import { mapState } from "vuex";
 import AccountSummary from "~/components/accounts/AccountSummary";
 import AccountCreate from "~/components/accounts/AccountCreate";
 export default {
+  layout: "application",
   middleware: ["check-auth", "auth"],
   components: { AccountSummary, AccountCreate },
   mixins: [pageMixin],

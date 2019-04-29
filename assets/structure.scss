@@ -11,9 +11,9 @@ body {
   margin: 0;
   background-color: $lightgrey;
 }
-section.container {
+.container {
   padding: 10px;
-
+position: relative;
   @media (min-width: 700px) {
     max-width: 80%;
     margin: auto;
@@ -24,6 +24,11 @@ section.container {
   }
 
   @media (min-width: 1200px) {
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  @media  (min-width: 1905px) {
     max-width: 1100px;
     margin: auto;
   }

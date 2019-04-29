@@ -10,6 +10,7 @@ import { parseHash } from "~/common/auth";
 import InlineLoader from "~/components/InlineLoader";
 
 export default {
+  layout: "plain",
   components: {
     InlineLoader
   },

@@ -8,6 +8,7 @@
       :unique-id="accountData.id"
       type="line"
     />
+    <AccountDelete :account-id="accountData.id" />
     <ul class="table-list">
       <li v-for="record in accountHistory" :key="record.id">
         <span>{{ record.value | sterling }}</span>
@@ -30,13 +31,15 @@ import AccountValueUpdate from "./AccountValueUpdate";
 import AccountHeaderInfo from "~/components/accounts/AccountHeaderInfo";
 import ApexChart from "~/components/ApexChart";
 import moment from "moment";
+import AccountDelete from "~/components/accounts/AccountDelete";
 
 export default {
   components: {
     InlineButton,
     AccountValueUpdate,
     ApexChart,
-    AccountHeaderInfo
+    AccountHeaderInfo,
+    AccountDelete
   },
   props: {
     accountData: {
