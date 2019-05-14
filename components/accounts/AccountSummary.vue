@@ -72,8 +72,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../../assets/colors";
-@import "../../assets/mixins";
 h3 {
   margin: 0;
 }
