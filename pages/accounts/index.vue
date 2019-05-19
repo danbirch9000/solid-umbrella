@@ -44,16 +44,17 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/colors";
 @import "../../assets/mixins";
+@import "../../assets/variables";
 
 .account-grid {
   display: grid;
-  grid-gap: 15px;
+  grid-gap: $spacer;
   grid-template-columns: 1fr;
   @include tablet {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
   @include desktop {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 </style>

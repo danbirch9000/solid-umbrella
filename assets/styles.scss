@@ -4,7 +4,7 @@
 @import "forms";
 @import "type";
 @import "tables";
-
+@import "mixins";
 .dg-container {
   .dg-btn--cancel {
     color: #fff;
@@ -114,4 +114,35 @@
 .link-text {
   text-decoration: underline;
   cursor: pointer;
+}
+
+// Vuetify
+
+#__nuxt .v-sheet {
+  padding: 20px;
+  border-radius: 10px;
+}
+#__nuxt .v-toolbar__content {
+  text-align: center;
+}
+#__nuxt .v-toolbar__title {
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  left: 0;
+}
+
+@mixin leftAlignLogo() {
+  #__nuxt .v-toolbar__content {
+    text-align: left;
+  }
+  #__nuxt .v-toolbar__title {
+    width: auto;
+    margin: inherit;
+    position: relative;
+    left: inherit;
+  }
+}
+@include tabletAndAbove {
+  @include leftAlignLogo();
 }

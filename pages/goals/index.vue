@@ -62,11 +62,12 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/colors";
 @import "../../assets/mixins";
+@import "../../assets/variables";
 
 .goals-grid {
   margin: 10px 0;
   display: grid;
-  grid-gap: 15px;
+  grid-gap: $spacer;
   grid-template-columns: 1fr;
   @include tablet {
     grid-template-columns: repeat(2, 1fr);

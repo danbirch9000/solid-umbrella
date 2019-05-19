@@ -45,9 +45,9 @@
       </v-list>
     </v-navigation-drawer>
     <v-content>
-      <v-container grid-list-md>
-        <v-layout justify-center>
-          <v-flex>
+      <v-container>
+        <v-layout column>
+          <v-flex xs12>
             <nuxt />
           </v-flex>
         </v-layout>
