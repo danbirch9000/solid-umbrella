@@ -89,9 +89,7 @@ export const getCiForMonths = (amount, months, monthly, rate) => {
 
   return {
     value: value,
-    formattedvalue: numberWithCommas(value),
-    interest: interest,
-    formattedInterest: numberWithCommas(interest)
+    interest: parseFloat(interest.toFixed(2))
   };
 };
 

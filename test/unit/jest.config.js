@@ -15,7 +15,7 @@ module.exports = {
   snapshotSerializers: ["<rootDir>/node_modules/jest-serializer-vue"],
   setupFiles: ["<rootDir>/test/unit/setup"],
   coverageDirectory: "<rootDir>/test/unit/coverage",
-  setupTestFrameworkScriptFile: "mock-local-storage",
+  setupFilesAfterEnv: ["mock-local-storage"],
   collectCoverageFrom: [
     "components/**/*.{js,vue}",
     "!components/icons/**",

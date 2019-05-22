@@ -1,4 +1,8 @@
-import { getFinanceData, addAccounts } from "~/common/utilities";
+import {
+  getFinanceData,
+  addAccounts,
+  getCiForMonths
+} from "~/common/utilities";
 import moment from "moment";
 
 describe("getFinanceData", () => {
@@ -102,6 +106,16 @@ describe("addAccounts", () => {
         [1493334000000, 6000]
       ],
       name: "Combined savings"
+    });
+  });
+});
+
+describe("getCiForMonths", () => {
+  it("should return correct object", () => {
+    const results = getCiForMonths(10000, 24, 800, 5);
+    expect(results).toEqual({
+      interest: 2082.1,
+      value: 31282.1
     });
   });
 });
